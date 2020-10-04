@@ -3,9 +3,9 @@ package guru.springframework.guruspring3dependencyinjection.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImpl implements GreetingService{
+public class ConstructorInjGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Hello world";
+        return "Hello world (constructor edition)";
     }
 }

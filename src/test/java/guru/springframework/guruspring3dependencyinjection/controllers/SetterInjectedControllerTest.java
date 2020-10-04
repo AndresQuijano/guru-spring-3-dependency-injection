@@ -1,11 +1,9 @@
 package guru.springframework.guruspring3dependencyinjection.controllers;
 
 import guru.springframework.guruspring3dependencyinjection.services.GreetingService;
-import guru.springframework.guruspring3dependencyinjection.services.GreetingServiceImpl;
+import guru.springframework.guruspring3dependencyinjection.services.PropertyInjGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectedControllerTest {
     private SetterInjectedController setterInjectedController;
@@ -13,7 +11,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         setterInjectedController=new SetterInjectedController();
-        GreetingService greetingService=new GreetingServiceImpl();
+        GreetingService greetingService=new PropertyInjGreetingService();
         setterInjectedController.setGreetingService(greetingService);
     }
 

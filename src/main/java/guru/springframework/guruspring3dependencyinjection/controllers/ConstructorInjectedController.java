@@ -1,13 +1,14 @@
 package guru.springframework.guruspring3dependencyinjection.controllers;
 
 import guru.springframework.guruspring3dependencyinjection.services.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class ConstructorInjectedController {
     private final GreetingService greetingService;
     //@Autowired is no longer required
-    public ConstructorInjectedController(GreetingService greetingService){
+    public ConstructorInjectedController(@Qualifier("constructorInjGreetingService") GreetingService greetingService){
         this.greetingService=greetingService;
     }
 
