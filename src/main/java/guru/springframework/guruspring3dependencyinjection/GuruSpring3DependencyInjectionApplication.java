@@ -15,10 +15,9 @@ public class GuruSpring3DependencyInjectionApplication {
 		ApplicationContext ctx= SpringApplication.run(GuruSpring3DependencyInjectionApplication.class, args);
 		String greeting;
 
+		System.out.println("---------Primary");
 		MyController myController=(MyController) ctx.getBean("myController");
-		greeting=myController.sayHello();
-
-		System.out.println(greeting);
+		System.out.println(myController.sayHello());
 
 		System.out.println("----------Property injected");
 		PropertyInjectedController propertyInjectedController=(PropertyInjectedController) ctx.getBean("propertyInjectedController");
