@@ -7,36 +7,17 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"guru.services","guru.springframework"})
 public class GuruSpring3DependencyInjectionApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx= SpringApplication.run(GuruSpring3DependencyInjectionApplication.class, args);
-		String greeting;
+		ApplicationContext ctx = SpringApplication.run(GuruSpring3DependencyInjectionApplication.class, args);
 
-		PetController petController = ctx.getBean("petController", PetController.class);
-		System.out.println("--- The Best Pet is ---");
-		System.out.println(petController.whichPetIsTheBest());
+		MyController controller = (MyController) ctx.getBean("myController");
 
-		System.out.println("---------Profiles");
-		I18nController i18nController=(I18nController)ctx.getBean("i18nController");
-		System.out.println(i18nController.sayHello());
+		System.out.println(controller.hello());
+		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
 
-		System.out.println("---------Primary");
-		MyController myController=(MyController) ctx.getBean("myController");
-		System.out.println(myController.sayHello());
-
-		System.out.println("----------Property injected");
-		PropertyInjectedController propertyInjectedController=(PropertyInjectedController) ctx.getBean("propertyInjectedController");
-		System.out.println(propertyInjectedController.getGreeting());
-
-		System.out.println("----------Setter injected");
-		SetterInjectedController setterInjectedController=(SetterInjectedController)ctx.getBean("setterInjectedController");
-		System.out.println(setterInjectedController.getGreeting());
-
-		System.out.println("----------Constructor injected");
-		ConstructorInjectedController constructorInjectedController=(ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.getGreeting());
 	}
 
 }

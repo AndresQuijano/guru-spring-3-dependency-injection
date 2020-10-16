@@ -1,17 +1,25 @@
 package guru.springframework.guruspring3dependencyinjection.controllers;
 
-import guru.services.GreetingService;
+
+
+import guru.springframework.guruspring3dependencyinjection.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
+/**
+ * Created by jt on 5/23/17.
+ */
 @Controller
 public class MyController {
-    private final GreetingService greetingService;
 
-    public MyController(GreetingService service){
-        greetingService=service;
+    private GreetingService greetingService;
+
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
-    public String sayHello(){
+    public String hello(){
+        System.out.println("Hello!!! ");
+
         return greetingService.sayGreeting();
     }
 }
