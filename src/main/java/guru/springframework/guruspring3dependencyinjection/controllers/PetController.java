@@ -1,6 +1,6 @@
 package guru.springframework.guruspring3dependencyinjection.controllers;
 
-import guru.springframework.guruspring3dependencyinjection.services.PetService;
+import guru.services.PetService;
 import org.springframework.stereotype.Controller;
 
 @Controller

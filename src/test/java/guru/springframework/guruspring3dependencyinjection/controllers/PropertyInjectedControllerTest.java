@@ -1,6 +1,6 @@
 package guru.springframework.guruspring3dependencyinjection.controllers;
 
-import guru.springframework.guruspring3dependencyinjection.services.PropertyInjGreetingService;
+import guru.services.PropertyInjGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

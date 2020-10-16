@@ -1,6 +1,6 @@
 package guru.springframework.guruspring3dependencyinjection.controllers;
 
-import guru.springframework.guruspring3dependencyinjection.services.GreetingService;
+import guru.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller

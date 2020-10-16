@@ -1,4 +1,4 @@
-package guru.springframework.guruspring3dependencyinjection.services;
+package guru.services;
 
 
 import org.springframework.beans.BeansException;

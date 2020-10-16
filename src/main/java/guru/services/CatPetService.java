@@ -1,4 +1,4 @@
-package guru.springframework.guruspring3dependencyinjection.services;
+package guru.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
